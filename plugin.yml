@@ -1,0 +1,18 @@
+main: de.kirimcdev.minecraft.plugins.kiricore.main.Main
+name: kiriCore
+version: a20191003
+author: kirimcdev
+
+commands:
+  afk:
+    description: Marks you or another player as AFK or back
+    usage: /afk [Player]
+  afklist:
+    description: Shows all players who are currently marked as AFK
+    usage: /afklist
+  isafk:
+    description: Checks and shows if a specific player is marked as AFK at the moment
+    usage: /isafk <Player>
+  clearchat:
+    description: Clears the chat by sending 100 empty messages.
+    usage: /clearchat
