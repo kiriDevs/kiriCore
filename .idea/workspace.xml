@@ -8,7 +8,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2cda3210-aa27-4e21-ad4f-7c0f20c97c99" name="Default Changelist" comment="" />
+    <list default="true" id="17826019-97d3-4e07-9f12-f3e33b53e2c6" name="Default Changelist" comment="Added readme.md">
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -26,6 +28,13 @@
   </component>
   <component name="GitRewordedCommitMessages">
     <option name="onto" value="896dd3d4cb45500b4bfb40d2e3e04e20967ce621" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="H:\Software\JetBrains\ToolboxInstall\apps\IDEA-C\ch-0\202.6948.69\plugins\maven\lib\maven3" />
+      </MavenGeneralSettings>
+    </option>
   </component>
   <component name="ProjectId" id="1RkPiWEgChBdSlMK3cjXhwlcN26" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
