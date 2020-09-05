@@ -8,8 +8,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="17826019-97d3-4e07-9f12-f3e33b53e2c6" name="Default Changelist" comment="Added readme.md">
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    <list default="true" id="17826019-97d3-4e07-9f12-f3e33b53e2c6" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +86,14 @@
       <option name="project" value="LOCAL" />
       <updated>1599346479117</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Added readme.md, fixed workplace">
+      <created>1599347425516</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1599347425516</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -153,13 +160,14 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added implementation with Essentials to not display / broadcast AFK / back people when they're vanished.&#10;&#10;Also: Added /exit as alias to /stop" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added implementation with Essentials to not display / broadcast AFK / back people when they're vanished.&#10;&#10;Also: Added /exit as alias to /stop" />
+    <MESSAGE value="Added readme.md, fixed workplace" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added readme.md, fixed workplace" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="384" y="85" key="CommitChangelistDialog2" timestamp="1599346478218">
+    <state x="384" y="85" key="CommitChangelistDialog2" timestamp="1599347424807">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="384" y="85" key="CommitChangelistDialog2/0.0.1920.1040/-1600.212.1600.860@0.0.1920.1040" timestamp="1599346478218" />
+    <state x="384" y="85" key="CommitChangelistDialog2/0.0.1920.1040/-1600.212.1600.860@0.0.1920.1040" timestamp="1599347424807" />
     <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1599346258204">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -172,9 +180,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="452" y="203" key="Git.Interactive.Rebase.Dialog/0.0.1920.1040/-1600.212.1600.860@0.0.1920.1040" timestamp="1599346292895" />
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1599346568718">
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1599347434507">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1600.212.1600.860@0.0.1920.1040" timestamp="1599346568718" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1600.212.1600.860@0.0.1920.1040" timestamp="1599347434507" />
   </component>
 </project>
