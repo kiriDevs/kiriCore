@@ -35,8 +35,8 @@
     </dependencies>
 
     <properties>
-        <java.version>1.14</java.version>
-        <maven.compiler.source>1.14</maven.compiler.source>
+        <java.version>1.13</java.version>
+        <maven.compiler.source>1.13</maven.compiler.source>
         <maven.compiler.target>1.13</maven.compiler.target>
     </properties>
     

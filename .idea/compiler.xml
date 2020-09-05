@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="kiriCore-1.14" target="1.11" />
+      <module name="kiriCore-1.14" target="1.13" />
     </bytecodeTargetLevel>
   </component>
 </project>
