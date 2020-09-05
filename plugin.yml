@@ -1,7 +1,10 @@
 main: de.kirimcdev.minecraft.plugins.kiricore.main.Main
 name: kiriCore
-version: a20191003
+version: a20200620-1
 author: kirimcdev
+
+softdepend:
+  - "Essentials"
 
 commands:
   afk:
@@ -14,5 +17,8 @@ commands:
     description: Checks and shows if a specific player is marked as AFK at the moment
     usage: /isafk <Player>
   clearchat:
-    description: Clears the chat by sending 100 empty messages.
-    usage: /clearchat
+    description: Clears the chat by sending some empty messages.
+    usage: /clearchat [anyways|console]
+  exit:
+    description: Stops the server. (Just an alias for /stop)
+    usage: /exit

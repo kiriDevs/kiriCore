@@ -8,26 +8,33 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 public class CMDclearChat implements CommandExecutor {
-
     @Override
     public boolean onCommand(CommandSender cmdSender, Command cmd, String label, String[] args) {
         if (cmdSender.hasPermission("kiri.core.clearchat")) {
-            for (int i = 0; i < 100; i++) {
-                Vars.server.broadcastMessage("");
-            }
-            String closingMsg = Methods.genPrefix("kiriCore", Vars.console, "a", "a");
-            closingMsg += "The chat was cleared by §r";
-            if (cmdSender instanceof Player) {
-                Player player = (Player) cmdSender;
-                closingMsg += player.getDisplayName() + "§r§a.";
+            if (args.length == 0) {
+                String whoCleared;
+
+                if (cmdSender instanceof Player) {
+                    whoCleared = "§r" + ((Player) cmdSender).getDisplayName();
+                } else {
+                    whoCleared = "§r§4CONSOLE";
+                }
+
+                for (int i = 0; i < 100; i++) {
+                    Vars.server.broadcastMessage("");
+                }
+                String msg = Methods.genPrefix("kiriCore", Vars.console, "a", "a");
+                msg += Vars.chatCleared(whoCleared, "a");
+                Vars.server.broadcastMessage(msg);
             } else {
-                closingMsg += "§4CONSOLE" + "§a.";
+                String syntaxMsg = Methods.genPrefix("kiriCore", cmdSender, "a", "c");
+                syntaxMsg += Vars.wrongSyntax + "clearchat";
+                cmdSender.sendMessage(syntaxMsg);
             }
-            Vars.server.broadcastMessage(closingMsg);
         } else {
-            String msg = Methods.genPrefix("kiriCore", cmdSender, "a", "c");
-            msg += Vars.noPermission;
-            cmdSender.sendMessage(msg);
+            String noPermMsg = Methods.genPrefix("kiriCore", cmdSender, "a", "c");
+            noPermMsg += Vars.noPermission;
+            cmdSender.sendMessage(noPermMsg);
         }
         return true;
     }

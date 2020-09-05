@@ -7,22 +7,19 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 
-@SuppressWarnings("unused")
+@SuppressWarnings({"unused", "RedundantSuppression"}) // onPlayerChatEvent "unused", suppression for that "redundant"
 public class LISTplayerChat implements Listener {
     @EventHandler
     public static void onPlayerChatEvent(AsyncPlayerChatEvent event) {
         Player player = event.getPlayer();
-        if (Vars.afkList.contains(player.getName())) {
-            event.setCancelled(true);
-            Vars.afkList.remove(player.getName());
+        if (Methods.getIsAfk(player)) {
+            event.setCancelled(true); // Cancelling chat event so it comes in after the public message
 
-            String publicMsg = Methods.genPrefix("kiriCore", player, "a", "a");
-            publicMsg += "§r" + player.getDisplayName() + "§a is no longer AFK!";
-            Vars.server.broadcastMessage(publicMsg);
+            Methods.unMarkAfk(player);
 
-            String playerMsg = Methods.genPrefix("kiriCore", player, "a", "a");
-            playerMsg += "Your AFK-Status was removed due to chat activity!";
-            player.sendMessage(playerMsg);
+            String privateMsg = Methods.genPrefix("kiriCore", player, "a", "a");
+            privateMsg += "Your AFK status was removed due to chat activity!";
+            player.sendMessage(privateMsg);
 
             event.setCancelled(false);
         }

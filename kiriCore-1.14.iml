@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module org.jetbrains.idea.maven.project.MavenProjectsManager.isMavenModule="true" type="JAVA_MODULE" version="4">
-  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_11">
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_14">
     <output url="file://$MODULE_DIR$/target/classes" />
     <output-test url="file://$MODULE_DIR$/target/test-classes" />
     <content url="file://$MODULE_DIR$">
@@ -11,6 +11,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="essentialsX" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: com.destroystokyo.paper:paper-api:1.11.2-R0.1-SNAPSHOT" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: commons-lang:commons-lang:2.6" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: com.googlecode.json-simple:json-simple:1.1.1" level="project" />
@@ -24,5 +25,15 @@
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.yaml:snakeyaml:1.17" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: net.md-5:bungeecord-chat:1.10-SNAPSHOT" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.ow2.asm:asm-all:5.0.4" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: net.ess3:EssentialsX:2.16.1" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: io.papermc:paperlib:1.0.2" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: net.ess3:NMSProvider:2.16.1" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: net.ess3:UpdatedMetaProvider:2.16.1" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: net.ess3:1_8_R1Provider:2.16.1" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: net.ess3:1_8_R2Provider:2.16.1" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: net.ess3:LegacyProvider:2.16.1" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: net.ess3:ReflectionProvider:2.16.1" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.bukkit:bukkit:1.12.2-R0.1-SNAPSHOT" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: net.ess3:FlattenedProvider:2.16.1" level="project" />
   </component>
 </module>

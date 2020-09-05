@@ -5,13 +5,17 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>de.kirimcdev.minecraft.plugins.core</groupId>
-    <artifactId>kiriCore-MC1.14</artifactId>
-    <version>a-20191004</version>
+    <artifactId>kiriCore-MC1.14.4</artifactId>
+    <version>a-20200620-1</version>
 
     <repositories>
         <repository>
             <id>destroystokyo-repo</id>
             <url>https://repo.destroystokyo.com/repository/maven-public//</url>
+        </repository>
+        <repository>
+            <id>ess-repo</id>
+            <url>https://ci.ender.zone/plugin/repository/everything/</url>
         </repository>
     </repositories>
 
@@ -22,12 +26,18 @@
             <version>1.11.2-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
+        <dependency>
+            <groupId>net.ess3</groupId>
+            <artifactId>EssentialsX</artifactId>
+            <version>2.16.1</version>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
 
     <properties>
-        <java.version>1.11</java.version>
-        <maven.compiler.source>1.11</maven.compiler.source>
-        <maven.compiler.target>1.11</maven.compiler.target>
+        <java.version>1.14</java.version>
+        <maven.compiler.source>1.14</maven.compiler.source>
+        <maven.compiler.target>1.13</maven.compiler.target>
     </properties>
     
 </project>

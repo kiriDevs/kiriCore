@@ -1,16 +1,13 @@
 package de.kirimcdev.minecraft.plugins.kiricore.main;
 
 import de.kirimcdev.minecraft.plugins.kiricore.DummyException;
-import de.kirimcdev.minecraft.plugins.kiricore.commands.CMDafk;
-import de.kirimcdev.minecraft.plugins.kiricore.commands.CMDafkList;
-import de.kirimcdev.minecraft.plugins.kiricore.commands.CMDclearChat;
-import de.kirimcdev.minecraft.plugins.kiricore.commands.CMDisAfk;
+import de.kirimcdev.minecraft.plugins.kiricore.commands.*;
 import de.kirimcdev.minecraft.plugins.kiricore.listeners.LISTplayerChat;
 import de.kirimcdev.minecraft.plugins.kiricore.listeners.LISTplayerLeave;
 import de.kirimcdev.minecraft.plugins.kiricore.listeners.LISTplayerMove;
 import org.bukkit.plugin.java.JavaPlugin;
 
-@SuppressWarnings("unused")
+@SuppressWarnings({"unused", "RedundantSuppression"}) // Main was reported "unused", the suppressor "redundant"
 public class Main extends JavaPlugin {
 
     private boolean successfulInit = true;
@@ -20,15 +17,28 @@ public class Main extends JavaPlugin {
         initPlugin();
         if (successfulInit) {
             String successMessage = Methods.genPrefix("kiriCore", Vars.console, "a", "2");
-            successMessage += "I had a perfect startup without any errors!";
+            successMessage += "The Plugin got successfully enabled.";
             Vars.console.sendMessage(successMessage);
         }
+
+        String essentialsMessage;
+        if (Vars.essentialsExists) {
+            essentialsMessage = Methods.genPrefix("kiriCore", Vars.console, "a", "2");
+            essentialsMessage += "Essentials was detected. Vanishing of players will be considered.";
+        } else {
+            essentialsMessage = Methods.genPrefix("kiriCore", Vars.console, "a", "c");
+            essentialsMessage += "Essentials wasn't detected. [This is not critical, the plugin will run normally]";
+        }
+        Vars.console.sendMessage(essentialsMessage);
 
         super.onEnable();
     }
 
     @Override
     public void onDisable() {
+        String successMessage = Methods.genPrefix("kiriCore", Vars.console, "a", "2");
+        successMessage += "The Plugin got successfully disabled.";
+        Vars.console.sendMessage(successMessage);
         super.onDisable();
     }
 
@@ -44,6 +54,7 @@ public class Main extends JavaPlugin {
             getCommand("afklist").setExecutor(new CMDafkList());
             getCommand("isafk").setExecutor(new CMDisAfk());
             getCommand("clearchat").setExecutor(new CMDclearChat());
+            getCommand("exit").setExecutor(new CMDexit());
         } catch (Exception excep) {
             Methods.logError("kiriCore", "init.command", excep);
             successfulInit = false;

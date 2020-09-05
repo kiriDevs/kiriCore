@@ -12,34 +12,10 @@ public class CMDafk implements CommandExecutor {
 
     public boolean onCommand(CommandSender cmdSender, Command cmd, String label, String[] args) {
         if (cmdSender.hasPermission("kiri.core.afk")) {
-            String nowAfk = "You are now marked as AFK.";
-            String nowAfkPu = " is now AFK.";
-            String noLongerAfk = "You are no longer marked as AFK.";
-            String noLongerAfkPu = " is no longer AFK.";
             if (args.length == 0) {
                 if (cmdSender instanceof Player) {
-                    Player toAfk = (Player) cmdSender;
-                    if (!Vars.afkList.contains(toAfk.getName())) {
-                        Vars.afkList.add(toAfk.getName());
-
-                        String publicMessage = Methods.genPrefix("kiriCore", Vars.console, "a", "a");
-                        publicMessage += "§r" + toAfk.getDisplayName() + "§r§a" + nowAfkPu;
-                        Vars.server.broadcastMessage(publicMessage);
-
-                        String privateMessage = Methods.genPrefix("kiriCore", toAfk, "a", "a");
-                        privateMessage += nowAfk;
-                        toAfk.sendMessage(privateMessage);
-                    } else {
-                        Vars.afkList.remove(toAfk.getName());
-
-                        String publicMessage = Methods.genPrefix("kiriCore", Vars.console, "a", "a");
-                        publicMessage += "§r" + toAfk.getDisplayName() + "§r§a" + noLongerAfkPu;
-                        Vars.server.broadcastMessage(publicMessage);
-
-                        String privateMessage = Methods.genPrefix("kiriCore", toAfk, "a", "a");
-                        privateMessage += noLongerAfk;
-                        toAfk.sendMessage(privateMessage);
-                    }
+                    Player player = (Player) cmdSender;
+                    Methods.toggleAfk(player);
                 } else {
                     String msg = Methods.genPrefix("kiriCore", cmdSender, "a", "c");
                     msg += Vars.playersOnly;
@@ -48,31 +24,13 @@ public class CMDafk implements CommandExecutor {
             } else if (args.length == 1) {
                 if (cmdSender.hasPermission("kiri.core.afk.others")) {
                     Player toAfk = Bukkit.getPlayer(args[0]);
-                    if (!(toAfk == null)) {
-                        if (!Vars.afkList.contains(toAfk.getName())) {
-                            Vars.afkList.add(toAfk.getName());
-
-                            String publicMessage = Methods.genPrefix("kiriCore", Vars.console, "a", "a");
-                            publicMessage += "§r" + toAfk.getDisplayName() + "§r§a" + nowAfkPu;
-                            Vars.server.broadcastMessage(publicMessage);
-
-                            String privateMessage = Methods.genPrefix("kiriCore", toAfk, "a", "a");
-                            privateMessage += nowAfk;
-                            toAfk.sendMessage(privateMessage);
-                        } else {
-                            Vars.afkList.remove(toAfk.getName());
-
-                            String publicMessage = Methods.genPrefix("kiriCore", Vars.console, "a", "a");
-                            publicMessage += "§r" + toAfk.getDisplayName() + "§r§a" + noLongerAfkPu;
-                            Vars.server.broadcastMessage(publicMessage);
-
-                            String privateMessage = Methods.genPrefix("kiriCore", toAfk, "a", "a");
-                            privateMessage += noLongerAfk;
-                            toAfk.sendMessage(privateMessage);
-                        }
+                    if (toAfk != null && !Methods.getIsVanish(toAfk)) {
+                        Methods.toggleAfk(toAfk);
+                    } else if (toAfk != null && cmdSender.hasPermission("kiri.core.afk.others.vanish")) {
+                        Methods.toggleAfk(toAfk);
                     } else {
                         String msg = Methods.genPrefix("kiriCore", cmdSender, "a", "c");
-                        msg += "The player §e" + args[0] + "§c is not on this server at the moment.";
+                        msg += Vars.notOnline(args[0], "a");
                         cmdSender.sendMessage(msg);
                     }
                 } else {

@@ -13,20 +13,30 @@ public class CMDisAfk implements CommandExecutor {
         if (cmdSender.hasPermission("kiri.core.afk.check")) {
             if (args.length == 1) {
                 Player toCheck = Bukkit.getPlayer(args[0]);
-                if (!(toCheck == null)) {
-                    String checkResult = Methods.genPrefix("kiriCore", cmdSender, "a", "a");
-                    checkResult += "The player §e" + toCheck.getDisplayName();
-                    if (Vars.afkList.contains(toCheck.getName())) {
-                        checkResult += "§2 is";
+                if (toCheck != null) {
+                    if (!Methods.getIsVanish(toCheck) || Methods.getIsVanish(toCheck) && cmdSender.hasPermission("kiri.core.afk.check.vanish")) {
+                        if (Vars.afkList.contains(toCheck.getName())) {
+                            String msg = Methods.genPrefix("kiriCore", cmdSender, "a", "a");
+                            msg += "The player §r";
+                            msg += toCheck.getDisplayName();
+                            msg += " §2IS §aAFK at the moment.";
+                            cmdSender.sendMessage(msg);
+                        } else {
+                            String msg = Methods.genPrefix("kiriCore", cmdSender, "a", "a");
+                            msg += "The player §r";
+                            msg += toCheck.getDisplayName();
+                            msg += " §4ISN'T §aAFK at the moment.";
+                            cmdSender.sendMessage(msg);
+                        }
                     } else {
-                        checkResult += "§4 isn't";
+                        String fakeNotOnline = Methods.genPrefix("kiriCore", cmdSender, "a", "c");
+                        fakeNotOnline += Vars.notOnline(args[0], "c");
+                        cmdSender.sendMessage(fakeNotOnline);
                     }
-                    checkResult += "§a marked as AFK at the moment.";
-                    cmdSender.sendMessage(checkResult);
                 } else {
-                    String msg = Methods.genPrefix("kiriCore", cmdSender, "a", "c");
-                    msg += "The player §e" + args[0] + "§c is not on this server at the moment.";
-                    cmdSender.sendMessage(msg);
+                    String notOnlineMsg = Methods.genPrefix("kiriCore", cmdSender, "a", "c");
+                    notOnlineMsg += Vars.notOnline(args[0], "c");
+                    cmdSender.sendMessage(notOnlineMsg);
                 }
             } else {
                 String msg = Methods.genPrefix("kiriCore", cmdSender, "a", "c");
