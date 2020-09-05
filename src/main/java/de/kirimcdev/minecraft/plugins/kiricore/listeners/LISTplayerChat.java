@@ -1,7 +1,6 @@
 package de.kirimcdev.minecraft.plugins.kiricore.listeners;
 
 import de.kirimcdev.minecraft.plugins.kiricore.main.Methods;
-import de.kirimcdev.minecraft.plugins.kiricore.main.Vars;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
