@@ -4,7 +4,7 @@ version: a20200620-1
 author: kirimcdev
 
 softdepend:
-  - "Essentials"
+  - Essentials
 
 commands:
   afk:
@@ -22,3 +22,4 @@ commands:
   exit:
     description: Stops the server. (Just an alias for /stop)
     usage: /exit
+    
