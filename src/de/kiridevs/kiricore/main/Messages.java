@@ -6,8 +6,6 @@ import org.bukkit.entity.Player;
 public class Messages {
     private static final String noPermString = "Sorry, you don't have permission to do that!";
     private static final String playersOnlyString = "Sorry, only a player can use that command!";
-    private static final String nowAfkString = "You are now marked as AFK!";
-    private static final String nowBackString = "You were marked as no longer AFK!";
     private static final String badSyntaxString = "Sorry, please use the command like this: §e";
 
     public static String noPerm(CommandSender recipient, String neededPerm) {
