@@ -1,0 +1,3 @@
+# Ignoring IntelliJ project files
+.idea
+*.iml
