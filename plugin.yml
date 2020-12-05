@@ -1,0 +1,17 @@
+main: de.kiridevs.kiricore.main.Main
+
+name: kiriCore
+version: 0.1
+author: kiriDevs
+
+description: >
+  kiriCore is an open-source library for Minecraft Plugins,
+  used by kiriDevs for all their plugins, but can also be used by other
+  developers for their own projects. It also provides some core features
+  like commands that can be useful on many servers.
+
+commands:
+  afk:
+    description: Toggle your AFK-Status!
+    usage: /afk
+  # permission: kiri.core.afk
