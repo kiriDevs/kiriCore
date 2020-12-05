@@ -21,11 +21,6 @@ public class Messages {
     }
 
     public static String playersOnly() { return Main.errorPrefix.console + playersOnlyString; }
-
-    public static String nowAfk() { return Main.successPrefix.console + nowAfkString; }
-
-    public static String nowBack() { return Main.successPrefix.console + nowBackString; }
-
     public static String badSyntax(CommandSender recipient, String correctSyntax) {
         String message;
 
