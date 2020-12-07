@@ -1,7 +1,7 @@
 main: de.kiridevs.kiricore.main.Main
 
 name: kiriCore
-version: 0.1
+version: 0.2.0
 author: kiriDevs
 
 description: >
@@ -14,4 +14,8 @@ commands:
   afk:
     description: Toggle your AFK-Status!
     usage: /afk
-  # permission: kiri.core.afk
+    permission: kiri.core.afk
+  isafk:
+    description: Check if a specific player is marked as AFK at the moment!
+    usage: /isafk <Playername>
+    permission: kiri.core.afk.check
