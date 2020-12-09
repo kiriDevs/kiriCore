@@ -12,12 +12,13 @@ public class AfkManager {
 
 
     // Methods for checking status
-    @SuppressWarnings("unused") public static boolean isAfk(String playername) { return afkList.contains(playername); }
-    @SuppressWarnings("unused") public static boolean isAfk(Player player) { return afkList.contains(player.getName()); }
+    @SuppressWarnings("unused")
+    public static boolean isAfk(String playername) { return afkList.contains(playername); }
+    public static boolean isAfk(Player player) { return afkList.contains(player.getName()); }
 
 
     // Methods for changing status
-    @SuppressWarnings({"unused", "UnusedReturnValue"})
+    @SuppressWarnings("UnusedReturnValue")
     public static boolean markAfk(Player player) {
         if (!isAfk(player)) {
             // Calling an event
@@ -31,7 +32,7 @@ public class AfkManager {
         }
     }
 
-    @SuppressWarnings({"unused", "UnusedReturnValue"})
+    @SuppressWarnings("UnusedReturnValue")
     public static boolean markBack(Player player) {
         if (isAfk(player)) {
             // Calling an event
@@ -46,7 +47,7 @@ public class AfkManager {
         }
     }
 
-    @SuppressWarnings({"unused", "UnusedReturnValue"})
+    @SuppressWarnings("UnusedReturnValue")
     public static boolean toggleAfk(Player player) {
         if (isAfk(player)) {
             markBack(player);
