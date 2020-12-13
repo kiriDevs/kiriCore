@@ -7,6 +7,9 @@
 - /afk
     - Toggle your own AFK status!
     - permission: kiri.core.afk
-- /isafk \<Spielername>
+- /isafk \<player name>
     - Check if a specific player is marked as AFK at the moment!
     - permission: kiri.core.afk.check
+- /rename \<new item name>
+    - Rename your currently held item! (max. 32 characters of length)
+    - permission: kiri.core.rename
