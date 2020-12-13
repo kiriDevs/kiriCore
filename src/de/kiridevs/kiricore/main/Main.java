@@ -3,6 +3,7 @@ package de.kiridevs.kiricore.main;
 import de.kiridevs.kiricore.Prefix;
 import de.kiridevs.kiricore.commands.CMDAfk;
 import de.kiridevs.kiricore.commands.CMDIsAfk;
+import de.kiridevs.kiricore.commands.CMDrename;
 import de.kiridevs.kiricore.listeners.LISTonPlayerChangeAfkStatus;
 import de.kiridevs.kiricore.listeners.LISTonPlayerLeave;
 import org.bukkit.Bukkit;
@@ -25,6 +26,7 @@ public class Main extends JavaPlugin {
         // Command registration
         getCommand("afk").setExecutor(new CMDAfk());
         getCommand("isafk").setExecutor(new CMDIsAfk());
+        getCommand("rename").setExecutor(new CMDrename());
 
         // Listener registration
         Bukkit.getPluginManager().registerEvents(new LISTonPlayerLeave(), this);

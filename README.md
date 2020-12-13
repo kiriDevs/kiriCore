@@ -1,7 +1,7 @@
 # kiriCore
 `NOTE: The kiriCore is currently being rewritten. Please check back later for more information or a finished version!`
 
-[Current version: 0.2]
+[Current version: 0.3.0]
 
 ### Commands:
 - /afk
