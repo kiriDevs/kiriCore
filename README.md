@@ -1,7 +1,7 @@
 # kiriCore
 `NOTE: The kiriCore is currently being rewritten. Please check back later for more information or a finished version!`
 
-[Current version: 0.4.2]
+[Current version: 0.5.0]
 
 ### Commands:
 - /afk
@@ -10,6 +10,9 @@
 - /isafk \<player name>
   - Check if a specific player is marked as AFK at the moment!
   - permission: kiri.core.afk.check
+- /afklist
+  - Print a list of all players marked as AFK at the moment
+  - permission: kiri.core.afk.list
 - /rename \<new item name>
   - Rename your currently held item! (max. 32 characters of length)
   - permission: kiri.core.rename
