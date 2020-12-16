@@ -12,9 +12,9 @@ import org.bukkit.entity.Player;
 import javax.annotation.Nonnull;
 import java.util.ArrayList;
 
-public class CMDIsAfk implements CommandExecutor {
+public class CMDisAfk implements CommandExecutor {
     MessageService messageService;
-    public CMDIsAfk(MessageService messageService) {
+    public CMDisAfk(MessageService messageService) {
         this.messageService = messageService;
     }
 

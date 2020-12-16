@@ -1,8 +1,8 @@
 package de.kiridevs.kiricore.main;
 
 import de.kiridevs.kiricore.Prefix;
-import de.kiridevs.kiricore.commands.CMDAfk;
-import de.kiridevs.kiricore.commands.CMDIsAfk;
+import de.kiridevs.kiricore.commands.CMDafk;
+import de.kiridevs.kiricore.commands.CMDisAfk;
 import de.kiridevs.kiricore.commands.CMDrename;
 import de.kiridevs.kiricore.listeners.LISTonPlayerChangeAfkStatus;
 import de.kiridevs.kiricore.listeners.LISTonPlayerLeave;
@@ -40,8 +40,8 @@ public class Main extends JavaPlugin {
         messageService = new MessageService(prefixMap, messagePresets);
 
         // Command registration
-        getCommand("afk").setExecutor(new CMDAfk(messageService));
-        getCommand("isafk").setExecutor(new CMDIsAfk(messageService));
+        getCommand("afk").setExecutor(new CMDafk(messageService));
+        getCommand("isafk").setExecutor(new CMDisAfk(messageService));
         getCommand("rename").setExecutor(new CMDrename(messageService));
 
         // Listener registration

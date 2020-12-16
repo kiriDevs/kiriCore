@@ -10,9 +10,9 @@ import org.bukkit.entity.Player;
 import javax.annotation.Nonnull;
 import java.util.ArrayList;
 
-public class CMDAfk implements CommandExecutor {
+public class CMDafk implements CommandExecutor {
     MessageService messageService;
-    public CMDAfk(MessageService messageService) {
+    public CMDafk(MessageService messageService) {
         this.messageService = messageService;
     }
 
