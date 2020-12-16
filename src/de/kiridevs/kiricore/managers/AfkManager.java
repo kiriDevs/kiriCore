@@ -57,4 +57,6 @@ public class AfkManager {
             return true; // New AFK status: true
         }
     }
+
+    public static ArrayList<String> getAfkList() { return afkList; }
 }
