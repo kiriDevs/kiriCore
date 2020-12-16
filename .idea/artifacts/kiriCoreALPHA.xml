@@ -1,9 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="jar" name="kiriCoreALPHA">
-    <output-path>$PROJECT_DIR$/../../#testServer/plugins</output-path>
-    <root id="archive" name="kiriCoreALPHA.jar">
-      <element id="file-copy" path="$PROJECT_DIR$/plugin.yml" />
-      <element id="module-output" name="kiriCore-1.14" />
-    </root>
-  </artifact>
-</component>

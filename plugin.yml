@@ -1,25 +1,30 @@
-main: de.kirimcdev.minecraft.plugins.kiricore.main.Main
-name: kiriCore
-version: a20200620-1
-author: kirimcdev
+main: de.kiridevs.kiricore.main.Main
 
-softdepend:
-  - Essentials
+name: kiriCore
+version: 0.6.0
+api-version: 1.16
+author: kiriDevs
+
+description: >
+  kiriCore is an open-source library for Minecraft Plugins,
+  used by kiriDevs for all their plugins, but can also be used by other
+  developers for their own projects. It also provides some core features
+  like commands that can be useful on many servers.
 
 commands:
   afk:
-    description: Marks you or another player as AFK or back
-    usage: /afk [Player]
-  afklist:
-    description: Shows all players who are currently marked as AFK
-    usage: /afklist
+    description: Toggle your AFK-Status!
+    usage: /afk
+    permission: kiri.core.afk
   isafk:
-    description: Checks and shows if a specific player is marked as AFK at the moment
-    usage: /isafk <Player>
-  clearchat:
-    description: Clears the chat by sending some empty messages.
-    usage: /clearchat [anyways|console]
-  exit:
-    description: Stops the server. (Just an alias for /stop)
-    usage: /exit
-    
+    description: Check if a specific player is marked as AFK at the moment!
+    usage: /isafk <Playername>
+    permission: kiri.core.afk.check
+  afklist:
+    description: Print a list of all players marked as AFK at the moment!
+    usage: /afklist
+    permission: kiri.core.afk.list
+  rename:
+    description: Rename the currently held item
+    usage: /rename <new item name>
+    permission: kiri.core.rename

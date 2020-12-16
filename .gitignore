@@ -1,2 +1,6 @@
-target
-src/test
+# Ignoring IntelliJ project files
+.idea
+*.iml
+
+# Ignoring output files
+out
