@@ -39,7 +39,6 @@ public class AfkManager {
             PlayerChangeAfkStatusEvent event = new PlayerChangeAfkStatusEvent(player, false);
             Bukkit.getPluginManager().callEvent(event);
 
-
             afkList.remove(player.getName()); // Removing Player from the AFKList
             return true; // Action completed
         } else {

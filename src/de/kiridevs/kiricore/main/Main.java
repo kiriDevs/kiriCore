@@ -5,10 +5,13 @@ import de.kiridevs.kiricore.commands.CMDafk;
 import de.kiridevs.kiricore.commands.CMDafkList;
 import de.kiridevs.kiricore.commands.CMDisAfk;
 import de.kiridevs.kiricore.commands.CMDrename;
+import de.kiridevs.kiricore.listeners.LISTonAsyncPlayerChatEvent;
 import de.kiridevs.kiricore.listeners.LISTonPlayerChangeAfkStatus;
 import de.kiridevs.kiricore.listeners.LISTonPlayerLeave;
+import de.kiridevs.kiricore.listeners.LISTonPlayerMoveEvent;
 import de.kiridevs.kiricore.managers.MessageService;
 import org.bukkit.Bukkit;
+import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.HashMap;
@@ -16,6 +19,8 @@ import java.util.Map;
 
 @SuppressWarnings("unused") // Class is used by Spigot
 public class Main extends JavaPlugin {
+    private static Main plugin;
+
     Prefix successPrefix = new Prefix("kiriCore", "2", "a");
     Prefix errorPrefix = new Prefix("kiriCore", "2", "c");
     Prefix infoPrefix = new Prefix("kiriCore", "2", "b");
@@ -26,6 +31,8 @@ public class Main extends JavaPlugin {
     @SuppressWarnings("ConstantConditions")
     @Override
     public void onEnable() {
+        plugin = this;
+
         // MessageService creation
         prefixMap.put("success", successPrefix);
         prefixMap.put("error", errorPrefix);
@@ -48,7 +55,10 @@ public class Main extends JavaPlugin {
 
         // Listener registration
         Bukkit.getPluginManager().registerEvents(new LISTonPlayerLeave(), this);
+        Bukkit.getPluginManager().registerEvents(new LISTonPlayerMoveEvent(), this);
+        Bukkit.getPluginManager().registerEvents(new LISTonAsyncPlayerChatEvent(), this);
         Bukkit.getPluginManager().registerEvents(new LISTonPlayerChangeAfkStatus(messageService), this);
     }
 
+    public static Main getPlugin() { return plugin; }
 }
