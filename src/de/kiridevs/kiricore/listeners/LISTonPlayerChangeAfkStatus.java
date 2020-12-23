@@ -15,7 +15,6 @@ public class LISTonPlayerChangeAfkStatus implements Listener {
         this.messageService = messageService;
     }
 
-    @SuppressWarnings("unused")
     @EventHandler
     public void onPlayerChangeAfkStatus(PlayerChangeAfkStatusEvent event) {
         Server server = Bukkit.getServer();
@@ -31,5 +30,4 @@ public class LISTonPlayerChangeAfkStatus implements Listener {
         if (isAfkNow) { messageService.broadcastMessage("nowafk", completionList); }
         else { messageService.broadcastMessage("nolongerafk", completionList); }
     }
-
 }

@@ -7,12 +7,9 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerQuitEvent;
 
 public class LISTonPlayerLeave implements Listener {
-
-    @SuppressWarnings("unused")
     @EventHandler
     public void onPlayerLeaveEvent(PlayerQuitEvent event) {
         Player player = event.getPlayer();
         AfkManager.markBack(player);
     }
-
 }
