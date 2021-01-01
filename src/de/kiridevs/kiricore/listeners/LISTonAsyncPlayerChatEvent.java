@@ -8,8 +8,6 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 
-import java.util.concurrent.Callable;
-
 public class LISTonAsyncPlayerChatEvent implements Listener {
     @EventHandler
     public void onAsyncPlayerChatEvent(AsyncPlayerChatEvent event) {
@@ -19,14 +17,12 @@ public class LISTonAsyncPlayerChatEvent implements Listener {
         event.setCancelled(true); // Cancel event so the "player is back" message is sent before the actual chat message is
 
         if (event.isAsynchronous()) {
+            Main plugin = Main.getKiriCore();
             // Event was caused by an actual player -> async
             // Running sync method AfkManager.markBack(player) from async context: (Needed as another event is fired)
-            Bukkit.getScheduler().callSyncMethod(Main.getPlugin(), new Callable<>() {
-                @Override
-                public Object call() {
-                    AfkManager.markBack(player);
-                    return null;
-                }
+            Bukkit.getScheduler().callSyncMethod(plugin, () -> {
+                AfkManager.markBack(player);
+                return null;
             });
         } else {
             // Event was caused by another Plugin forcing a player to speak -> sync

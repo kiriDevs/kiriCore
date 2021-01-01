@@ -1,6 +1,5 @@
 package de.kiridevs.kiricore.commands;
 
-import de.kiridevs.kiricore.main.Main;
 import de.kiridevs.kiricore.managers.AfkManager;
 import de.kiridevs.kiricore.managers.MessageService;
 import org.bukkit.Bukkit;

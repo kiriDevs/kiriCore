@@ -12,9 +12,7 @@ import java.util.ArrayList;
 
 public class CMDafk implements CommandExecutor {
     MessageService messageService;
-    public CMDafk(MessageService messageService) {
-        this.messageService = messageService;
-    }
+    public CMDafk(MessageService messageService) { this.messageService = messageService; }
 
     @Override
     public boolean onCommand(@Nonnull CommandSender cmdSender, @Nonnull Command cmd, @Nonnull String label, @Nonnull String[] args) {

@@ -1,6 +1,5 @@
 package de.kiridevs.kiricore.commands;
 
-import de.kiridevs.kiricore.main.Main;
 import de.kiridevs.kiricore.managers.MessageService;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -11,7 +10,6 @@ import org.bukkit.inventory.PlayerInventory;
 import org.bukkit.inventory.meta.ItemMeta;
 
 import javax.annotation.Nonnull;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class CMDrename implements CommandExecutor {
