@@ -1,5 +1,6 @@
 # kiriCore
 ![Maven Build](https://github.com/kiriDevs/kiriCore/workflows/Maven%20Build/badge.svg)
+<br>
 [Current version: 0.6.0]
 
 ### Commands:
