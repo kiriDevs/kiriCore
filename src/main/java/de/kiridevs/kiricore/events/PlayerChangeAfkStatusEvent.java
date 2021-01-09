@@ -3,8 +3,7 @@ package de.kiridevs.kiricore.events;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
-
-import javax.annotation.Nonnull;
+import org.jetbrains.annotations.NotNull;
 
 public class PlayerChangeAfkStatusEvent extends Event {
     private final Player player;
@@ -27,7 +26,7 @@ public class PlayerChangeAfkStatusEvent extends Event {
 
 
     @Override
-    public @Nonnull HandlerList getHandlers() { return handlerList; }
+    public @NotNull HandlerList getHandlers() { return handlerList; }
 
     @SuppressWarnings("unused")
     public static HandlerList getHandlerList() { return handlerList; }

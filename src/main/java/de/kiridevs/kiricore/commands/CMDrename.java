@@ -8,8 +8,8 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.PlayerInventory;
 import org.bukkit.inventory.meta.ItemMeta;
+import org.jetbrains.annotations.NotNull;
 
-import javax.annotation.Nonnull;
 import java.util.ArrayList;
 
 public class CMDrename implements CommandExecutor {
@@ -19,7 +19,7 @@ public class CMDrename implements CommandExecutor {
     }
 
     @Override
-    public boolean onCommand(@Nonnull CommandSender cmdSender, @Nonnull Command cmd, @Nonnull String label, @Nonnull String[] args) {
+    public boolean onCommand(@NotNull CommandSender cmdSender, @NotNull Command cmd, @NotNull String label, @NotNull String[] args) {
         if (!(cmdSender.hasPermission("kiri.core.rename"))) {
             ArrayList<String> completionList = new ArrayList<>();
             completionList.add("kiri.core.rename");

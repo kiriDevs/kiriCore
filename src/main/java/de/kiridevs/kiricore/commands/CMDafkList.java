@@ -5,8 +5,8 @@ import de.kiridevs.kiricore.managers.MessageService;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.jetbrains.annotations.NotNull;
 
-import javax.annotation.Nonnull;
 import java.util.ArrayList;
 
 public class CMDafkList implements CommandExecutor {
@@ -16,7 +16,7 @@ public class CMDafkList implements CommandExecutor {
     }
 
     @Override
-    public boolean onCommand(@Nonnull CommandSender cmdSender, @Nonnull Command cmd, @Nonnull String label, @Nonnull String[] args) {
+    public boolean onCommand(@NotNull CommandSender cmdSender, @NotNull Command cmd, @NotNull String label, @NotNull String[] args) {
         if (!(cmdSender.hasPermission("kiri.core.afk.list"))) {
             ArrayList<String> completionList = new ArrayList<>();
             completionList.add("kiri.core.afk.list");
