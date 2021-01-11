@@ -7,6 +7,27 @@
     <groupId>de.kiridevs.minecraft.plugins</groupId>
     <artifactId>kiriCore</artifactId>
     <version>0.6.0</version>
+    <packaging>jar</packaging>
+
+    <name>kiriCore</name>
+    <description>
+        kiriCore is an open-source Minecraft-Plugin-Library, built against the Spigot API
+        and therefore usable with Spigot servers and all forks of Spigot.
+    </description>
+    <url>https://github.com/kiriDevs/kiriCore</url>
+
+    <licenses>
+        <license>
+            <name>GNU General Public License v3.0</name>
+            <url>https://www.gnu.org/licenses/gpl-3.0.txt</url>
+        </license>
+    </licenses>
+
+    <scm>
+        <connection>scm:git:git://github.com/kiriDevs/kiriCore.git</connection>
+        <developerConnection>scm:git:git://github.com/kiriDevs/kiriCore.git</developerConnection>
+        <url>https://github.com/kiriDevs/kiriCore/tree/master</url>
+    </scm>
 
     <properties>
         <maven.compiler.source>14</maven.compiler.source>
