@@ -3,6 +3,7 @@ on: [push, pull_request]
 
 jobs:
   build:
+    name: Maven Build
     runs-on: ubuntu-latest
 
     steps:
