@@ -18,4 +18,4 @@ jobs:
         architecture: x64
       
     - name: Build project with Maven
-      run: mvn package --file pom.xml
+      run: mvn verify --file pom.xml
