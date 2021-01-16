@@ -2,29 +2,33 @@ import de.kiridevs.kiricore.Prefix;
 import org.junit.jupiter.api.Test;
 
 public class PrefixTest {
+    Prefix checkingPrefix;
+    String consoleExpectation;
+    String playerExpectation;
 
-    boolean check(String value, String expectation) {
-        return value.equals(expectation);
-    }
+    boolean checkPrefix() {
+        boolean consoleOkay = checkingPrefix.console.equals(consoleExpectation);
+        boolean playerOkay = checkingPrefix.player.equals(playerExpectation);
 
-    boolean checkPrefix(Prefix resultPrefix, String consoleExpectation, String playerExpectation) {
-        boolean consoleMeets = check(resultPrefix.console, consoleExpectation);
-        boolean playerMeets = check(resultPrefix.player, playerExpectation);
-
-        return consoleMeets && playerMeets;
+        return consoleOkay && playerOkay;
     }
 
     @Test
     void testPrefix() {
-        // Declare expectations
-        final String SUCCESS_PREFIX_CONSOLE_EXPECTATION = "§8[§r§2kiriCore§r§8]§r§a ";
-        final String SUCCESS_PREFIX_PLAYER_EXPECTATION = "§8[§r§l§2kiriCore§r§8]§r§a ";
+        consoleExpectation = "§8[§r§2success§r§8]§r§a ";
+        playerExpectation = "§8[§r§l§2success§r§8]§r§a ";
+        checkingPrefix = new Prefix("success", "2", "a");
+        assert checkPrefix();
 
-        // Testing logic
-        Prefix successPrefix = new Prefix("kiriCore", "2", "a");
+        consoleExpectation = "§8[§r§aerrorMaker§r§8]§r§4 ";
+        playerExpectation = "§8[§r§l§aerrorMaker§r§8]§r§4 ";
+        checkingPrefix = new Prefix("errorMaker", "a", "4");
+        assert checkPrefix();
 
-        // Assertions
-        assert checkPrefix(successPrefix, SUCCESS_PREFIX_CONSOLE_EXPECTATION, SUCCESS_PREFIX_PLAYER_EXPECTATION);
+        consoleExpectation = "§8[§r§9secretMessageLol§r§8]§r§k ";
+        playerExpectation = "§8[§r§l§9secretMessageLol§r§8]§r§k ";
+        checkingPrefix = new Prefix("secretMessageLol", "9", "k");
+        assert checkPrefix();
     }
 
 }
