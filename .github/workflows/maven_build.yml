@@ -21,7 +21,7 @@ jobs:
       run: mvn verify --file pom.xml
 
     - name: Upload code coverage reports to Codecov
-      uses: codecov/codecov-action@v1.2
+      uses: codecov/codecov-action@v1.2.1
       with:
         env_vars: OS
         name: automatic GitHub Actions upload
