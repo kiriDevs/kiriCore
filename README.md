@@ -27,7 +27,7 @@
 
 
 ### Code coverage
-Since it is rather hard to write tests for a Minecraft-Server plugin outside of the environment of a Minecraft server, only the library part (API) is being unittested during the build process. But also that isn't possible 100%. Therefore, the full code coverage number do not (and probably will never) look really good. However, I've decided to calculate and publish them anyways, since these numbers are always interesting for these APIs.
+Since it is rather hard to write tests for a Minecraft-Server plugin outside of the environment of a Minecraft server, only the library part (API) is being unittested during the build process. But also that isn't possible 100%. Therefore, the full code coverage numbers do not (and probably will never) look really good. However, I've decided to calculate and publish them anyways, since these numbers are always interesting for these APIs.
 
 With that said:
 Code coverage statistics can be found [here](https://codecov.io/gh/kiriDevs/kiriCore)!
