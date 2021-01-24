@@ -2,6 +2,12 @@
 .idea
 *.iml
 
+# Ignoring VSCode project files
+.vscode
+.classpath
+.settings
+.project
+
 # Ignoring output files
 out
 target
