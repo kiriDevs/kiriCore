@@ -13,6 +13,7 @@ import de.kiridevs.kiricore.managers.MessageService;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import java.io.Serial;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -21,13 +22,15 @@ public class Main extends JavaPlugin {
     public  static Main getKiriCore() { return plugin; }
 
     // MessageService creation
-    private final Map<String, Prefix> PREFIX_MAP = new HashMap<>() {{
+    private final Map<String, Prefix> PREFIX_MAP = new HashMap<>() {
+        @Serial private static final long serialVersionUID = 1200105127832529178L; {
         put("success",  new Prefix("kiriCore", "2", "a")); // light green text for successes
         put("error",    new Prefix("kiriCore", "2", "c")); // light red   text for errors
         put("info",     new Prefix("kiriCore", "2", "b")); // light aqua  text for info
     }};
 
-    private final Map<String, String> MESSAGE_PRESETS = new HashMap<>() {{
+    private final Map<String, String> MESSAGE_PRESETS = new HashMap<>() {
+        @Serial private static final long serialVersionUID = -3174899576421267075L; {
         put("noperm"         , "Sorry, you don't have permission to do that! ({0})"        );
         put("playersonly"    , "Sorry, only a player can use that command!"                );
         put("badsyntax"      , "Sorry, please use the command like this: §e{0}"            );
