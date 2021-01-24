@@ -1,5 +1,6 @@
 package de.kiridevs.kiricore.managers;
 
+import de.kiridevs.kiricore.annotations.PublicAPI;
 import de.kiridevs.kiricore.events.PlayerChangeAfkStatusEvent;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
@@ -16,15 +17,14 @@ public class AfkManager {
      * @return true when the player IS marked as AFK right now
      *         false when the player is NOT marked as AFK right now
      */
-    @SuppressWarnings("unused")
-    public static boolean isAfk(String playername) { return afkList.contains(playername); }
+    @PublicAPI public static boolean isAfk(String playername) { return afkList.contains(playername); }
 
     /** Allows quick checking of the status of a player using the player's Player object
      * @param player The Player element of the player to check the status of
      * @return true when the player IS marked as AFK right now
      *         false when the player is NOT marked as AFK right now
      */
-    public static boolean isAfk(Player player) { return afkList.contains(player.getName()); }
+    @PublicAPI public static boolean isAfk(Player player) { return afkList.contains(player.getName()); }
 
 
     // Methods for changing status
