@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>de.kiridevs.minecraft.plugins</groupId>
-    <artifactId>kiriCore</artifactId>
+    <artifactId>kiricore</artifactId>
     <version>0.6.0</version>
     <packaging>jar</packaging>
 
