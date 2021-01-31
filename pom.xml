@@ -25,8 +25,9 @@
 
     <scm>
         <connection>scm:git:git://github.com/kiriDevs/kiriCore.git</connection>
-        <developerConnection>scm:git:git://github.com/kiriDevs/kiriCore.git</developerConnection>
-        <url>https://github.com/kiriDevs/kiriCore/tree/master</url>
+        <developerConnection>scm:git:git://github.com/kiriDevs/kiriDevs.git</developerConnection>
+        <url>https://github.com/kiriDevs/kiriCore</url>
+        <tag>HEAD</tag>
     </scm>
 
     <properties>
