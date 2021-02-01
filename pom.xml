@@ -23,6 +23,14 @@
         </license>
     </licenses>
 
+    <developers>
+        <developer>
+            <name>kiriDevs</name>
+            <url>https://github.com/kiriDevs</url>
+            <email>kiron@kirimcplay.tv</email>
+        </developer>
+    </developers>
+
     <scm>
         <connection>scm:git:git://github.com/kiriDevs/kiriCore.git</connection>
         <developerConnection>scm:git:git://github.com/kiriDevs/kiriDevs.git</developerConnection>
