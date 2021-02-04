@@ -39,7 +39,7 @@ jobs:
       env:
         OOSRH_USERNAME: $ {{ secrets.OSSRH_USERNAME }}
         OOSRH_PASSWORD: ${{ secrets.OSSRH_PASSWORD }}
-        RELEASE_GPG_KEY_PASSSPHRASE: ${{ secrets.RELEASE_GPG_KEY_PASSPHRASE }}
+        RELEASE_GPG_KEY_PASSPHRASE: ${{ secrets.RELEASE_GPG_KEY_PASSPHRASE }}
     
     # This extra step is necessary since autoReleaseAfterClose is set to false in pom.xml
     - name: Deploy stageing repository from OSSRH to Maven Central
