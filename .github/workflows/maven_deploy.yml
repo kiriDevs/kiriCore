@@ -1,0 +1,57 @@
+name: Deploy on GH Release
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  release:
+    name: Deploy to Maven Central using OSSRH
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout released repo state
+      uses: actions/checkout@v2
+
+    - name: Set up JDK14
+      uses: actions/setup-java@v1
+      with:
+        java-version: "14"
+        java-package: jdk
+        architecture: x64
+
+    # Using actions/setup-java again overrides the settings.xml
+    - name: Setup settings.xml for Sonatype OSSRH deployment
+      uses: actions/setup-java@v1 
+      with: 
+        java-version: "14"
+        java-package: jdk
+        architecture: x64
+
+        server-id: ossrh
+        server-username: OSSRH_USERNAME
+        server-password: OSSRH_PASSWORD
+        gpg-private-key: ${{ secrets.RELEASE_GPG_KEY }}
+        gpg-passphrase: RELEASE_GPG_KEY_PASSPHRASE
+
+    - name: Build and Stage deployment using Maven
+      run: mvn deploy --file pom.xml --settings $GITHUB_WORKSPACE/settings.xml
+      env:
+        OOSRH_USERNAME: $ {{ secrets.OSSRH_USERNAME }}
+        OOSRH_PASSWORD: ${{ secrets.OSSRH_PASSWORD }}
+        RELEASE_GPG_KEY_PASSSPHRASE: ${{ secrets.RELEASE_GPG_KEY_PASSPHRASE }}
+    
+    # This extra step is necessary since autoReleaseAfterClose is set to false in pom.xml
+    - name: Deploy stageing repository from OSSRH to Maven Central
+      run: mvn nexus-staging:release
+
+    - name: Upload code coverage reports to Codecov
+      uses: codecov/codecov-action@v1.2.1
+      with:
+        env_vars: OS
+        name: GHA-controlled dual-release
+        directory: ./target/site/jacoco
+        files: ./target/site/jacoco/jacoco.xml
+        fail_ci_if_error: false
+        verbose: true
+    
