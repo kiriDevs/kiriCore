@@ -37,13 +37,16 @@ jobs:
     - name: Build and Stage deployment using Maven
       run: mvn deploy --file pom.xml
       env:
-        OOSRH_USERNAME: $ {{ secrets.OSSRH_USERNAME }}
-        OOSRH_PASSWORD: ${{ secrets.OSSRH_PASSWORD }}
+        OSSRH_USERNAME: ${{ secrets.OSSRH_USERNAME }}
+        OSSRH_PASSWORD: ${{ secrets.OSSRH_PASSWORD }}
         RELEASE_GPG_KEY_PASSPHRASE: ${{ secrets.RELEASE_GPG_KEY_PASSPHRASE }}
     
     # This extra step is necessary since autoReleaseAfterClose is set to false in pom.xml
     - name: Deploy stageing repository from OSSRH to Maven Central
       run: mvn nexus-staging:release
+      env:
+        OSSRH_USERNAME: ${{ secrets.OSSRH_USERNAME }}
+        OSSRH_PASSWORD: ${{ secrets.OOSRH_PASSWORD }}
 
     - name: Upload code coverage reports to Codecov
       uses: codecov/codecov-action@v1.2.1
