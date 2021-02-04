@@ -35,7 +35,7 @@ jobs:
         gpg-passphrase: RELEASE_GPG_KEY_PASSPHRASE
 
     - name: Build and Stage deployment using Maven
-      run: mvn deploy --file pom.xml --settings $GITHUB_WORKSPACE/settings.xml
+      run: mvn deploy --file pom.xml
       env:
         OOSRH_USERNAME: $ {{ secrets.OSSRH_USERNAME }}
         OOSRH_PASSWORD: ${{ secrets.OSSRH_PASSWORD }}
