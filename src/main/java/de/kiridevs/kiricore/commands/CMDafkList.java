@@ -16,23 +16,29 @@ public class CMDafkList implements CommandExecutor {
     }
 
     @Override
-    public boolean onCommand(@NotNull CommandSender cmdSender, @NotNull Command cmd, @NotNull String label, @NotNull String[] args) {
+    public boolean onCommand(
+            @NotNull CommandSender cmdSender,
+            @NotNull Command cmd,
+            @NotNull String label,
+            @NotNull String[] args
+    ) {
         if (!(cmdSender.hasPermission("kiri.core.afk.list"))) {
-            ArrayList<String> completionList = new ArrayList<>();
-            completionList.add("kiri.core.afk.list");
-            messageService.sendErrorMessage(cmdSender, "noperm", completionList);
+            ArrayList<String> completion = new ArrayList<>();
+            completion.add("kiri.core.afk.list");
+            messageService.sendErrorMessage(cmdSender, "noperm", completion);
             return true;
         }
 
         if (args.length != 0) {
-            ArrayList<String> completionList = new ArrayList<>();
-            completionList.add("/afklist");
-            messageService.sendErrorMessage(cmdSender, "badsyntax", completionList);
+            ArrayList<String> completion = new ArrayList<>();
+            completion.add("/afklist");
+            messageService.sendErrorMessage(cmdSender, "badsyntax", completion);
             return true;
         }
 
         if (AfkManager.getAfkList().size() == 0) {
-            messageService.sendErrorMessage(cmdSender, "No one is marked as AFK at the moment!");
+            messageService.sendErrorMessage(cmdSender,
+                    "No one is marked as AFK at the moment!");
             return true;
         }
 
@@ -50,7 +56,8 @@ public class CMDafkList implements CommandExecutor {
 
 
         String listString = listBuilder.toString();
-        messageService.sendInfoMessage(cmdSender, "These players are marked as AFK right now:");
+        messageService.sendInfoMessage(cmdSender,
+                "These players are marked as AFK right now:");
         messageService.sendInfoMessage(cmdSender, listString);
 
         return true;

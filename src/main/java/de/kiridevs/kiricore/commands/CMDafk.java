@@ -12,24 +12,31 @@ import java.util.ArrayList;
 
 public class CMDafk implements CommandExecutor {
     MessageService messageService;
-    public CMDafk(MessageService messageService) { this.messageService = messageService; }
+    public CMDafk(MessageService messageService) {
+        this.messageService = messageService;
+    }
 
     @Override
-    public boolean onCommand(@NotNull CommandSender cmdSender, @NotNull Command cmd, @NotNull String label, @NotNull String[] args) {
+    public boolean onCommand(
+            @NotNull CommandSender cmdSender,
+            @NotNull Command cmd,
+            @NotNull String label,
+            @NotNull String[] args
+    ) {
         // Input validation
         if (!cmdSender.hasPermission("kiri.core.afk")) {
-            ArrayList<String> completionList = new ArrayList<>();
-            completionList.add("kiri.core.afk");
+            ArrayList<String> completion = new ArrayList<>();
+            completion.add("kiri.core.afk");
 
-            messageService.sendErrorMessage(cmdSender, "noperm", completionList);
+            messageService.sendErrorMessage(cmdSender, "noperm", completion);
             return true;
         }
 
         if (args.length != 0) {
-            ArrayList<String> completionList = new ArrayList<>();
-            completionList.add("/afk");
+            ArrayList<String> completion = new ArrayList<>();
+            completion.add("/afk");
 
-            messageService.sendErrorMessage(cmdSender, "badsyntax", completionList);
+            messageService.sendErrorMessage(cmdSender, "badsyntax", completion);
             return true;
         }
 
