@@ -41,6 +41,15 @@ public class AfkManager {
 
 
     // Methods for changing status
+
+    /**
+     * Marks a player as AFK
+     *
+     * @param player The player to mark as AFK
+     * @return If the action was completed -
+     *         true: Action completed
+     *         false: Nothing changed - player was already AFK
+     */
     public static boolean markAfk(Player player) {
         if (!isAfk(player)) {
             // Calling an event
@@ -55,6 +64,14 @@ public class AfkManager {
         }
     }
 
+    /**
+     * Marks a player as back (no longer AFK)
+     *
+     * @param player The player to mark as back
+     * @return If the action was completed -
+     *         true: Action completed
+     *         false: Nothing changed - player was not AFK
+     */
     public static boolean markBack(Player player) {
         if (isAfk(player)) {
             // Calling an event
@@ -69,6 +86,15 @@ public class AfkManager {
         }
     }
 
+    /**
+     * Possibility to toggle the status of a Player
+     * without knowing it in advance
+     *
+     * @param player The player to change the status of
+     * @return The new AFK status -
+     *         false: Player is not AFK,
+     *         true: Player is AFK
+     */
     public static boolean toggleAfk(Player player) {
         if (isAfk(player)) {
             markBack(player);
