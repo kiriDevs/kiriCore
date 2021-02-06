@@ -18,22 +18,27 @@ public class CMDisAfk implements CommandExecutor {
     }
 
     @Override
-    public boolean onCommand(@NotNull CommandSender cmdSender, @NotNull Command cmd, @NotNull String label, @NotNull String[] args) {
+    public boolean onCommand(
+            @NotNull CommandSender cmdSender,
+            @NotNull Command cmd,
+            @NotNull String label,
+            @NotNull String[] args
+    ) {
         // No permission
         if (!(cmdSender.hasPermission("kiri.core.afk.check"))) {
-            ArrayList<String> completionList = new ArrayList<>();
-            completionList.add("kiri.core.afk.check");
+            ArrayList<String> completion = new ArrayList<>();
+            completion.add("kiri.core.afk.check");
 
-            messageService.sendErrorMessage(cmdSender, "noperm", completionList);
+            messageService.sendErrorMessage(cmdSender, "noperm", completion);
             return true;
         }
 
         // Wrong usage
         if (!(args.length == 1)) {
-            ArrayList<String> completionList = new ArrayList<>();
-            completionList.add("/isafk <playername>");
+            ArrayList<String> completion = new ArrayList<>();
+            completion.add("/isafk <playername>");
 
-            messageService.sendErrorMessage(cmdSender, "badsyntax", completionList);
+            messageService.sendErrorMessage(cmdSender, "badsyntax", completion);
             return true;
         }
 
@@ -41,10 +46,12 @@ public class CMDisAfk implements CommandExecutor {
 
         // Player does not exist or is not online
         if ((player == null) || (!(player.isOnline()))) {
-            ArrayList<String> completionList = new ArrayList<>();
-            completionList.add(args[0]);
+            ArrayList<String> completion = new ArrayList<>();
+            completion.add(args[0]);
 
-            messageService.sendErrorMessage(cmdSender, "playernotonline", completionList);
+            messageService.sendErrorMessage(cmdSender,
+                                           "playernotonline",
+                                           completion);
             return true;
         }
 
