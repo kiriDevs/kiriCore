@@ -19,18 +19,23 @@ public class CMDrename implements CommandExecutor {
     }
 
     @Override
-    public boolean onCommand(@NotNull CommandSender cmdSender, @NotNull Command cmd, @NotNull String label, @NotNull String[] args) {
+    public boolean onCommand(
+            @NotNull CommandSender cmdSender,
+            @NotNull Command cmd,
+            @NotNull String label,
+            @NotNull String[] args
+    ) {
         if (!(cmdSender.hasPermission("kiri.core.rename"))) {
-            ArrayList<String> completionList = new ArrayList<>();
-            completionList.add("kiri.core.rename");
-            messageService.sendErrorMessage(cmdSender, "noperm", completionList);
+            ArrayList<String> completion = new ArrayList<>();
+            completion.add("kiri.core.rename");
+            messageService.sendErrorMessage(cmdSender, "noperm", completion);
             return true;
         }
 
         if (!(args.length > 0)) {
-            ArrayList<String> completionList = new ArrayList<>();
-            completionList.add("/rename <new item name>");
-            messageService.sendErrorMessage(cmdSender, "badsyntax", completionList);
+            ArrayList<String> completion = new ArrayList<>();
+            completion.add("/rename <new item name>");
+            messageService.sendErrorMessage(cmdSender, "badsyntax", completion);
             return true;
         }
 
@@ -47,7 +52,9 @@ public class CMDrename implements CommandExecutor {
         ItemMeta heldItemMeta = heldItem.getItemMeta();
 
         if (heldItemMeta == null) { // No item held in hand
-            messageService.sendErrorMessage(cmdSender, "Please hold the item you want to rename in your main hand!");
+            messageService.sendErrorMessage(cmdSender,
+                                     "Please hold the item you want to " +
+                                     "rename in your main hand!");
             return true;
         }
 
@@ -58,20 +65,27 @@ public class CMDrename implements CommandExecutor {
             newNameBuilder.append(" ");
         }
         String newName = newNameBuilder.toString();
-        newName = newNameBuilder.substring(0, newName.length() - 1); // Remove trailing space from the string
+        // Remove trailing space from the string
+        newName = newNameBuilder.substring(0, newName.length() - 1);
 
         if (newName.length() > 35) {
-            messageService.sendErrorMessage(cmdSender, "This name is too long! The maximum is 35 characters, including spaces!");
+            messageService.sendErrorMessage(cmdSender,
+                                            "This name is too long! " +
+                                            "The maximum is 35 characters, " +
+                                            "including spaces!");
             return true;
         }
 
-        newName = "§b" + newName; // Add the color code the game would add for anvil-renamed items
-        newName = "§o" + newName; // Make the new name cursive like the game would with anvil-renamed items
+        // Add color and italic style like the game would in the anvil
+        newName = "§b" + newName;
+        newName = "§o" + newName;
 
         heldItemMeta.setDisplayName(newName); // Update display name in ItemMeta
         heldItem.setItemMeta(heldItemMeta); // Update ItemStack
-        playerInv.setItemInMainHand(heldItem); // Put ItemStack into Player's main hand
-        messageService.sendSuccessMessage(cmdSender, "Successfully changed the name of the item in your hand!");
+        playerInv.setItemInMainHand(heldItem); // Put ItemStack into main hand
+        messageService.sendSuccessMessage(cmdSender,
+                                          "Successfully changed the name " +
+                                          "of the item in your hand!");
 
         return true;
     }
