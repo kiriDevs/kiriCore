@@ -12,22 +12,29 @@ public class LISTonAsyncPlayerChatEvent implements Listener {
     @EventHandler
     public void onAsyncPlayerChatEvent(AsyncPlayerChatEvent event) {
         Player player = event.getPlayer();
-        if (!(AfkManager.isAfk(player))) { return; } // Skip all events where the player isn't AFK to enhance speed
+        if (!(AfkManager.isAfk(player))) {
+            return;
+        } // Skip all events where the player isn't AFK to enhance speed
 
-        event.setCancelled(true); // Cancel event so the "player is back" message is sent before the actual chat message is
+        // Cancel event
+        // "player is back" msg should be sent before the actual chat message
+        event.setCancelled(true);
 
         if (event.isAsynchronous()) {
             Main plugin = Main.getKiriCore();
-            // Event was caused by an actual player -> async
-            // Running sync method AfkManager.markBack(player) from async context: (Needed as another event is fired)
+            // Asynchronous event (player spoke themselves)
+
+            // Run sync method AfkManager.markBack(player) from async context
+            // This is needed as another event is fired
             Bukkit.getScheduler().callSyncMethod(plugin, () -> {
                 AfkManager.markBack(player);
                 return null;
             });
         } else {
-            // Event was caused by another Plugin forcing a player to speak -> sync
+            // Synchronous event (other plugin forced player to speak)
             AfkManager.markBack(player);
         }
-        event.setCancelled(false); // Un-cancel event so the players message is sent
+        // Un-cancel event so the players message is sent
+        event.setCancelled(false);
     }
 }
