@@ -22,8 +22,8 @@ jobs:
 
     # Using actions/setup-java again overrides the settings.xml
     - name: Setup settings.xml for Sonatype OSSRH deployment
-      uses: actions/setup-java@v1 
-      with: 
+      uses: actions/setup-java@v1
+      with:
         java-version: "14"
         java-package: jdk
         architecture: x64
@@ -40,7 +40,7 @@ jobs:
         OSSRH_USERNAME: ${{ secrets.OSSRH_USERNAME }}
         OSSRH_PASSWORD: ${{ secrets.OSSRH_PASSWORD }}
         RELEASE_GPG_KEY_PASSPHRASE: ${{ secrets.RELEASE_GPG_KEY_PASSPHRASE }}
-    
+
     # This extra step is necessary since autoReleaseAfterClose is set to false in pom.xml
     - name: Deploy stageing repository from OSSRH to Maven Central
       run: mvn nexus-staging:release
@@ -57,4 +57,4 @@ jobs:
         files: ./target/site/jacoco/jacoco.xml
         fail_ci_if_error: false
         verbose: true
-    
+
