@@ -1,6 +1,7 @@
 # kiriCore
 ![Maven Build](https://github.com/kiriDevs/kiriCore/workflows/Maven%20Build/badge.svg)
 ![CodeQL](https://github.com/kiriDevs/kiriCore/workflows/CodeQL/badge.svg)
+[![CodeFactor](https://www.codefactor.io/repository/github/kiridevs/kiricore/badge)](https://www.codefactor.io/repository/github/kiridevs/kiricore)
 ![Deploy on GH Release](https://github.com/kiriDevs/kiriCore/workflows/Deploy%20on%20GH%20Release/badge.svg)
 <br>
 [Current version: 0.7.0]
