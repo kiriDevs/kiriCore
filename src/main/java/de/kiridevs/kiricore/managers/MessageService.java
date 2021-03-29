@@ -58,6 +58,30 @@ public class MessageService {
         }
     }
 
+    private String completePreset(String presetKey, @Nullable List<String> completion) {
+
+        if (defaultMessages.get(presetKey) != null) {
+            String preset = defaultMessages.get(presetKey); // Get preset msg
+
+            if (completion != null) {
+                String message = preset;
+                for (int i = 0; i < completion.size(); i++) {
+                    String placeholder = "{" + i + "}";
+                    String value = completion.get(i);
+                    message = message.replace(placeholder, value);
+                }
+                return message;
+            } else {
+                return preset;
+            }
+        } else {
+            throw new IllegalArgumentException
+                    ("No predefined message with the key \"" +
+                            presetKey + "\" was found!");
+        }
+
+    }
+
     /**
      * Sends a message specified in content to the passed recipient,
      * using the required "success" prefix in the prefixMap
@@ -108,25 +132,7 @@ public class MessageService {
             msg = prefixMap.get("success").console;
         }
 
-        if (defaultMessages.get(messageKey) != null) {
-
-            String preset = defaultMessages.get
-                                   (messageKey); // Get preset msg
-            if (completionArgs != null) {
-                for (int i = 0; i < completionArgs.size(); i++) {
-                    String placeholder = "{" + i + "}";
-                    String value = completionArgs.get(i);
-                    preset = preset.replace(placeholder, value);
-                }
-            }
-            msg += preset; // Add edited preset to msg
-
-        } else {
-            throw new IllegalArgumentException
-                    ("No predefined message with the key \"" +
-                            messageKey + "\" was found!");
-        }
-
+        msg += completePreset(messageKey, completionArgs);
         recipient.sendMessage(msg);
     }
 
@@ -180,24 +186,7 @@ public class MessageService {
             msg = prefixMap.get("error").console;
         }
 
-        if (defaultMessages.get(messageKey) != null) {
-
-            String preset = defaultMessages.get(messageKey); // Get preset msg
-            if (completionArgs != null) {
-                for (int i = 0; i < completionArgs.size(); i++) {
-                    String placeholder = "{" + i + "}";
-                    String value = completionArgs.get(i);
-                    preset = preset.replace(placeholder, value);
-                }
-            }
-            msg += preset; // Add edited preset to msg
-
-        } else {
-            throw new IllegalArgumentException(
-                    "No predefined message with the key \"" +
-                            messageKey + "\" was found!");
-        }
-
+        msg += completePreset(messageKey, completionArgs);
         recipient.sendMessage(msg);
     }
 
@@ -251,24 +240,7 @@ public class MessageService {
             msg = prefixMap.get("info").console;
         }
 
-        if (defaultMessages.get(messageKey) != null) {
-
-            String preset = defaultMessages.get(messageKey); // Get preset msg
-            if (completionArgs != null) {
-                for (int i = 0; i < completionArgs.size(); i++) {
-                    String placeholder = "{" + i + "}";
-                    String value = completionArgs.get(i);
-                    preset = preset.replace(placeholder, value);
-                }
-            }
-            msg += preset; // Add edited preset to msg
-
-        } else {
-            throw new IllegalArgumentException(
-                    "No predefined message with the key \"" +
-                            messageKey + "\" was found!");
-        }
-
+        msg += completePreset(messageKey, completionArgs);
         recipient.sendMessage(msg);
     }
 
@@ -307,24 +279,7 @@ public class MessageService {
         String msg;
         msg = prefixMap.get("info").console;
 
-        if (defaultMessages.get(messageKey) != null) {
-
-            String preset = defaultMessages.get(messageKey); // Get preset msg
-            if (completionArgs != null) {
-                for (int i = 0; i < completionArgs.size(); i++) {
-                    String placeholder = "{" + i + "}";
-                    String value = completionArgs.get(i);
-                    preset = preset.replace(placeholder, value);
-                }
-            }
-            msg += preset; // Add edited preset to msg
-
-        } else {
-            throw new IllegalArgumentException(
-                    "No predefined message with the key \"" +
-                            messageKey + "\" was found!");
-        }
-
+        msg += completePreset(messageKey, completionArgs);
         Bukkit.getServer().broadcastMessage(msg);
     }
 
