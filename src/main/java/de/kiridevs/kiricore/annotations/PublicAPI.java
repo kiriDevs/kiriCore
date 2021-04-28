@@ -7,7 +7,7 @@ public @interface PublicAPI {
         It can be used as an Entry Point for "unused"-inspection in IntelliJ.
         This prevents IntelliJ from showing "unused" warnings,
           while not suppressing compiler warnings.
-        This behaviour makes sure VSCode doesn't throw warnings about
-          a compiler warning being suppressed.
+        Implementation of this Annotation instead of suppressing the warnings
+          prevents VSCode from warning about suppressed warnings.
      */
 }
