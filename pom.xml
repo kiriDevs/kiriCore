@@ -14,7 +14,7 @@
         kiriCore is an open-source Minecraft-Plugin-Library, built against the Spigot API
         and therefore usable with Spigot servers and all forks of Spigot.
     </description>
-    <url>https://github.com/kiriDevs/kiriCore</url>
+    <url>https://github.com/KiriMC-Plugins/kiriCore</url>
 
     <licenses>
         <license>
@@ -32,9 +32,9 @@
     </developers>
 
     <scm>
-        <connection>scm:git:git://github.com/kiriDevs/kiriCore.git</connection>
+        <connection>scm:git:git://github.com/KiriMC-Plugins/kiriCore.git</connection>
         <developerConnection>scm:git:git://github.com/kiriDevs/kiriDevs.git</developerConnection>
-        <url>https://github.com/kiriDevs/kiriCore</url>
+        <url>https://github.com/KiriMC-Plugins/kiriCore</url>
         <tag>HEAD</tag>
     </scm>
 
