@@ -8,6 +8,13 @@
 
 ---
 
+**IMPORTANT:** Please note that this repository was moved from `kiriDevs/kiriCore` to `KiriMC-Plugins/kiriCore`.
+For now however, the old URL will still work due to GitHub's redirect.
+However, I can not guarantte that it will stay like that.
+I do not currently plan to change any other metadata though, so you shouldn't need to update your project's `pom.xml` (except if you included the VCS URL).
+
+---
+
 1. [Commands](#commands)
 2. [Code coverage](#code-coverage)
 
