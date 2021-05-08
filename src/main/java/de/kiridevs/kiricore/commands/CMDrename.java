@@ -1,6 +1,8 @@
 package de.kiridevs.kiricore.commands;
 
 import de.kiridevs.kiricore.managers.MessageService;
+import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -68,6 +70,10 @@ public class CMDrename implements CommandExecutor {
         // Remove trailing space from the string
         newName = newNameBuilder.substring(0, newName.length() - 1);
 
+        // Allowing for colors by interpreting &colorCodes
+        newName = ChatColor.translateAlternateColorCodes('&', newName);
+
+        // Enforce 35 character length limit
         if (newName.length() >= 35) {
             messageService.sendErrorMessage(cmdSender,
                                             "This name is too long! " +
@@ -76,6 +82,7 @@ public class CMDrename implements CommandExecutor {
             return true;
         }
 
+        // Finish up: Replace item in player's hand with the updated one
         heldItemMeta.setDisplayName(newName); // Update display name in ItemMeta
         heldItem.setItemMeta(heldItemMeta); // Update ItemStack
         playerInv.setItemInMainHand(heldItem); // Put ItemStack into main hand
