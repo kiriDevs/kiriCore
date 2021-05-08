@@ -76,10 +76,6 @@ public class CMDrename implements CommandExecutor {
             return true;
         }
 
-        // Add color and italic style like the game would in the anvil
-        newName = "§b" + newName;
-        newName = "§o" + newName;
-
         heldItemMeta.setDisplayName(newName); // Update display name in ItemMeta
         heldItem.setItemMeta(heldItemMeta); // Update ItemStack
         playerInv.setItemInMainHand(heldItem); // Put ItemStack into main hand
