@@ -73,8 +73,13 @@ public class CMDrename implements CommandExecutor {
         // Allowing for colors by interpreting &colorCodes
         newName = ChatColor.translateAlternateColorCodes('&', newName);
 
+        // Disregarding color codes for length limitation
+        String newNameNoColor = newName.replace("§", "");
+        int numberOfColorCodes = newName.length() - newNameNoColor.length();
+        int nameLength = newName.length() - numberOfColorCodes*2;
+
         // Enforce 35 character length limit
-        if (newName.length() >= 35) {
+        if (nameLength >= 35) {
             messageService.sendErrorMessage(cmdSender,
                                             "This name is too long! " +
                                             "The maximum is 35 characters, " +
