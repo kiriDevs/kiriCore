@@ -68,7 +68,7 @@ public class CMDrename implements CommandExecutor {
         // Remove trailing space from the string
         newName = newNameBuilder.substring(0, newName.length() - 1);
 
-        if (newName.length() > 35) {
+        if (newName.length() >= 35) {
             messageService.sendErrorMessage(cmdSender,
                                             "This name is too long! " +
                                             "The maximum is 35 characters, " +
