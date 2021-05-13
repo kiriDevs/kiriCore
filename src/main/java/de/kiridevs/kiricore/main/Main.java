@@ -39,7 +39,8 @@ public class Main extends JavaPlugin {
     }};
     private final MessageService MSG_SER = new MessageService(
             PREFIX_MAP,
-            MESSAGE_PRESETS);
+            MESSAGE_PRESETS
+    );
 
 
 
