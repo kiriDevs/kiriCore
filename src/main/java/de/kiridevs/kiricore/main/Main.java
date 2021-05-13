@@ -5,10 +5,7 @@ import de.kiridevs.kiricore.commands.CMDafk;
 import de.kiridevs.kiricore.commands.CMDafkList;
 import de.kiridevs.kiricore.commands.CMDisAfk;
 import de.kiridevs.kiricore.commands.CMDrename;
-import de.kiridevs.kiricore.listeners.LISTonAsyncPlayerChatEvent;
-import de.kiridevs.kiricore.listeners.LISTonPlayerChangeAfkStatus;
-import de.kiridevs.kiricore.listeners.LISTonPlayerLeave;
-import de.kiridevs.kiricore.listeners.LISTonPlayerMoveEvent;
+import de.kiridevs.kiricore.listeners.*;
 import de.kiridevs.kiricore.managers.MessageService;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -73,6 +70,11 @@ public class Main extends JavaPlugin {
                 new LISTonAsyncPlayerChatEvent(),
                 this);
 
+        Bukkit.getPluginManager().registerEvents(
+                new LISTonPvp(MSG_SER),
+                this);
+
+        // Register listeners to own events
         Bukkit.getPluginManager().registerEvents(
                 new LISTonPlayerChangeAfkStatus(MSG_SER),
                 this);
