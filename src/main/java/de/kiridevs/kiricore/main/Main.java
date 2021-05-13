@@ -1,10 +1,7 @@
 package de.kiridevs.kiricore.main;
 
 import de.kiridevs.kiricore.Prefix;
-import de.kiridevs.kiricore.commands.CMDafk;
-import de.kiridevs.kiricore.commands.CMDafkList;
-import de.kiridevs.kiricore.commands.CMDisAfk;
-import de.kiridevs.kiricore.commands.CMDrename;
+import de.kiridevs.kiricore.commands.*;
 import de.kiridevs.kiricore.listeners.*;
 import de.kiridevs.kiricore.managers.MessageService;
 import org.bukkit.Bukkit;
@@ -53,6 +50,7 @@ public class Main extends JavaPlugin {
 
         // Command registration
         getCommand("afk"    ).setExecutor(new CMDafk    (MSG_SER));
+        getCommand("pvp"    ).setExecutor(new CMDpvp    (MSG_SER));
         getCommand("isafk"  ).setExecutor(new CMDisAfk  (MSG_SER));
         getCommand("rename" ).setExecutor(new CMDrename (MSG_SER));
         getCommand("afklist").setExecutor(new CMDafkList(MSG_SER));

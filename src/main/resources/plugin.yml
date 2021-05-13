@@ -30,3 +30,7 @@ commands:
     description: Rename the currently held item
     usage: /rename <new item name>
     permission: kiri.core.rename
+  pvp:
+    description: Get or change the current status of PVP on the server!
+    usage: /afk [(yes, y, on, true) / (no, n, off, false)]
+    permissions: kiri.core.pvp
