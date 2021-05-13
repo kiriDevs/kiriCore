@@ -74,7 +74,6 @@ public class CMDpvp implements CommandExecutor {
 
         // Handle bad syntax
         ArrayList<String> completion = new ArrayList<>();
-        String correctSyntax = "/pvp";
         completion.add("/pvp [(y/yes/on/true) / (n/no/off/false)]");
         messageService.sendErrorMessage(cmdSender, "badsyntax", completion);
 
