@@ -21,7 +21,9 @@ public class LISTonPlayerChangeAfkStatus implements Listener {
         ArrayList<String> completionList = new ArrayList<>();
         completionList.add(playerName);
 
-        if (!(event.getPlayer().isOnline())) { return; } // Don't allow messages to be sent when player is no longer online (changed AFK status by leaving)
+        // Don't allow messages to be sent when player is no longer online
+        // (changed AFK status by leaving)
+        if (!(event.getPlayer().isOnline())) { return; }
 
         if (isAfkNow) {
             messageService.broadcastMessage("nowafkinfo", completionList);
