@@ -58,27 +58,33 @@ public class Main extends JavaPlugin {
         // Listener registration
         Bukkit.getPluginManager().registerEvents(
                 new LISTonPlayerLeave(),
-                this);
+                this
+        );
 
         Bukkit.getPluginManager().registerEvents(
                 new LISTonPlayerMoveEvent(),
-                this);
+                this
+        );
 
         Bukkit.getPluginManager().registerEvents(
                 new LISTonAsyncPlayerChatEvent(),
-                this);
+                this
+        );
 
         Bukkit.getPluginManager().registerEvents(
                 new LISTonPvp(MSG_SER),
-                this);
+                this
+        );
 
         // Register listeners to own events
         Bukkit.getPluginManager().registerEvents(
                 new LISTonPlayerChangeAfkStatus(MSG_SER),
-                this);
+                this
+        );
 
         Bukkit.getPluginManager().registerEvents(
                 new LISTonChangePvpStatusEvent(MSG_SER),
-                this);
+                this
+        );
     }
 }
