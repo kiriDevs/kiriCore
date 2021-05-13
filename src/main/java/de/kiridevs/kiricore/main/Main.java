@@ -78,5 +78,9 @@ public class Main extends JavaPlugin {
         Bukkit.getPluginManager().registerEvents(
                 new LISTonPlayerChangeAfkStatus(MSG_SER),
                 this);
+
+        Bukkit.getPluginManager().registerEvents(
+                new LISTonChangePvpStatusEvent(MSG_SER),
+                this);
     }
 }
