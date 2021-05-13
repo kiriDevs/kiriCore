@@ -15,15 +15,23 @@ public class PvpManager {
      * A list including the strings that are recognized
      * as arguments for /pvp to allow PVP
      */
-    public static final ArrayList<String> enableStrings = new ArrayList<>()
-    {{ add("y"); add("on"); add("yes"); add("true"); }};
+    public static final ArrayList<String> enableStrings = new ArrayList<>() {{
+        add("y");
+        add("on");
+        add("yes");
+        add("true");
+    }};
 
     /**
      * A list including the strings that are recognized
      * as arguments for /pvp to disallow PVP
      */
-    public static final ArrayList<String> disableStrings = new ArrayList<>()
-    {{ add("n"); add("no"); add("off"); add("false"); }};
+    public static final ArrayList<String> disableStrings = new ArrayList<>() {{
+        add("n");
+        add("no");
+        add("off");
+        add("false");
+    }};
 
     private static boolean doAllowPvp = true;
 
